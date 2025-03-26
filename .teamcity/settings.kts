@@ -1,8 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
-import jetbrains.buildServer.configs.kotlin.buildSteps.maven
-import jetbrains.buildServer.configs.kotlin.triggers.vcs
-import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -30,60 +26,8 @@ version = "2024.12"
 
 project {
 
-    vcsRoot(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
-
-    buildType(Build)
 }
 
 object Build : BuildType({
-    name = "Build"
 
-    params {
-        param("java.required.version", "17")
-    }
-
-    vcs {
-        root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
-    }
-
-
-    steps {
-        maven {
-            name = "Generate CSS Resources"
-            goals = "generate-resources"
-            runnerArgs = "-P css"
-        }
-
-        maven {
-            name = "Run Tests"
-            goals = "test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-
-        maven {
-            name = "Clean and Package"
-            goals = "clean package"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-    }
-
-    triggers {
-        vcs {
-        }
-    }
-
-    features {
-        perfmon {
-        }
-    }
-
-
-    artifactRules = "target/*.jar"
-})
-
-object HttpsGithubComKilina0springPetclinicGitRefsHeadsMain : GitVcsRoot({
-    name = "https://github.com/kilina0/spring-petclinic.git#refs/heads/main"
-    url = "https://github.com/kilina0/spring-petclinic.git"
-    branch = "refs/heads/main"
-    branchSpec = "refs/heads/*"
 })
