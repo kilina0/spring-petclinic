@@ -7,6 +7,7 @@ This directory contains configuration files and instructions for setting up Team
 1. `README.md` - Detailed instructions for manual TeamCity configuration
 2. `settings.kts` - TeamCity Kotlin DSL configuration file (needs to be processed by TeamCity)
 3. `settings.kts.template` - Template file with additional examples and comments
+4. `TROUBLESHOOTING.md` - Guidance for resolving common issues, including VCS synchronization problems
 
 ## Quick Start
 
@@ -54,5 +55,19 @@ If you encounter issues with the Kotlin DSL configuration:
 1. Make sure TeamCity has the proper version to support the DSL syntax
 2. Check that the build agent has JDK 17 installed and configured
 3. Verify that Maven is properly installed on the build agent
+
+### VCS Synchronization Issues
+
+If you see an error like:
+
+```
+Cannot update settings from VCS to revision c169c039271dbbe4c0dcc9ed0ef19b543c7ffdc7 because synchronization with VCS has been stopped due to: unknown reason
+```
+
+Refer to the [TROUBLESHOOTING.md](TROUBLESHOOTING.md) file for detailed guidance on resolving VCS synchronization issues. Common solutions include:
+
+1. Clicking the "Load project settings from VCS" button in TeamCity
+2. Checking your VCS root configuration
+3. Ensuring TeamCity has proper access to your Git repository
 
 For more detailed information, refer to the [TeamCity documentation](https://www.jetbrains.com/help/teamcity/teamcity-documentation.html).

@@ -8,6 +8,16 @@ This document provides instructions for setting up a TeamCity build configuratio
 2. JDK 17 installed on the build agent
 3. Maven installed on the build agent (or use TeamCity's bundled Maven)
 
+## Troubleshooting
+
+If you encounter issues with VCS synchronization, such as:
+
+```
+Cannot update settings from VCS to revision c169c039271dbbe4c0dcc9ed0ef19b543c7ffdc7 because synchronization with VCS has been stopped due to: unknown reason
+```
+
+Please refer to the [TROUBLESHOOTING.md](TROUBLESHOOTING.md) file for detailed guidance on resolving these issues.
+
 ## Manual Configuration
 
 ### 1. Create a New Project

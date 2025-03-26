@@ -1,0 +1,413 @@
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------< org.springframework.samples:spring-petclinic >------------
+[INFO] Building petclinic 3.4.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- enforcer:3.5.0:enforce (enforce-java) @ spring-petclinic ---
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/codehaus/plexus/plexus-utils/4.0.1/plexus-utils-4.0.1.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/codehaus/plexus/plexus-xml/3.0.0/plexus-xml-3.0.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/enforcer/enforcer-api/3.5.0/enforcer-api-3.5.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/enforcer/enforcer-rules/3.5.0/enforcer-rules-3.5.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/codehaus/plexus/plexus-utils/4.0.1/plexus-utils-4.0.1.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/codehaus/plexus/plexus-xml/3.0.0/plexus-xml-3.0.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/enforcer/enforcer-api/3.5.0/enforcer-api-3.5.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/enforcer/enforcer-rules/3.5.0/enforcer-rules-3.5.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.1/plexus-utils-4.0.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.1/plexus-utils-4.0.1.jar (193 kB at 490 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-xml/3.0.0/plexus-xml-3.0.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.5.0/enforcer-api-3.5.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.5.0/enforcer-rules-3.5.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.5.0/enforcer-api-3.5.0.jar (15 kB at 285 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-xml/3.0.0/plexus-xml-3.0.0.jar (93 kB at 253 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.5.0/enforcer-rules-3.5.0.jar (147 kB at 329 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar (509 kB at 953 kB/s)
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO]
+[INFO] --- spring-javaformat:0.0.43:validate (default) @ spring-petclinic ---
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/io/spring/jav
+aformat/spring-javaformat-formatter/0.0.43/spring-javaformat-formatter-0.0.43.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/io/spring/javaformat/spring-javaformat-config/0.0.43/spring-javaformat-config-0.0.43.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/io/spring/jav
+aformat/spring-javaformat-formatter-eclipse-jdt-jdk8/0.0.43/spring-javaformat-formatter-eclipse-jdt-jdk8-0.0.43.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/io/spring/jav
+aformat/spring-javaformat-formatter-eclipse-jdt-jdk17/0.0.43/spring-javaformat-formatter-eclipse-jdt-jdk17-0.0.43.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/codehaus/plexus/plexus-utils/3.5.1/plexus-utils-3.5.1.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/io/spring/jav
+aformat/spring-javaformat-formatter-eclipse-runtime/0.0.43/spring-javaformat-formatter-eclipse-runtime-0.0.43.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/io/spring/j
+avaformat/spring-javaformat-formatter/0.0.43/spring-javaformat-formatter-0.0.43.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/io/spring/javaformat/spring-javaformat-config/0.0.43/spring-javaformat-config-0.0.43.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/io/spring/j
+avaformat/spring-javaformat-formatter-eclipse-jdt-jdk8/0.0.43/spring-javaformat-formatter-eclipse-jdt-jdk8-0.0.43.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/io/spring/j
+avaformat/spring-javaformat-formatter-eclipse-jdt-jdk17/0.0.43/spring-javaformat-formatter-eclipse-jdt-jdk17-0.0.43.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/io/spring/j
+avaformat/spring-javaformat-formatter-eclipse-runtime/0.0.43/spring-javaformat-formatter-eclipse-runtime-0.0.43.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/codehaus/plexus/plexus-utils/3.5.1/plexus-utils-3.5.1.jar
+Downloading from central: https://repo.maven.apache.org/maven2/io/spring/javaformat/spring-javaformat-formatter/0.0.43/spring-javaformat-formatter-0.0.43.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/io/spring/javaform
+at/spring-javaformat-formatter/0.0.43/spring-javaformat-formatter-0.0.43.jar (31 kB at 369 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/spring/javaformat/spring-javaformat-config/0.0.43/spring-javaformat-config-0.0.43.jar
+Downloading from central: https://repo.maven.apache.org/maven2/io/spring/javafor
+mat/spring-javaformat-formatter-eclipse-jdt-jdk8/0.0.43/spring-javaformat-formatter-eclipse-jdt-jdk8-0.0.43.jar
+Downloading from central: https://repo.maven.apache.org/maven2/io/spring/javafor
+mat/spring-javaformat-formatter-eclipse-jdt-jdk17/0.0.43/spring-javaformat-formatter-eclipse-jdt-jdk17-0.0.43.jar
+Downloading from central: https://repo.maven.apache.org/maven2/io/spring/javafor
+mat/spring-javaformat-formatter-eclipse-runtime/0.0.43/spring-javaformat-formatter-eclipse-runtime-0.0.43.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.1/plexus-utils-3.5.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/io/spring/javaform
+at/spring-javaformat-config/0.0.43/spring-javaformat-config-0.0.43.jar (6.8 kB at 128 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.1/plexus-utils-3.5.1.jar (269 kB at 2.0 MB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/io/spring/javaform
+at/spring-javaformat-formatter-eclipse-runtime/0.0.43/spring-javaformat-formatter-eclipse-runtime-0.0.43.jar (2.4 MB at 403 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/io/spring/javaform
+at/spring-javaformat-formatter-eclipse-jdt-jdk8/0.0.43/spring-javaformat-formatter-eclipse-jdt-jdk8-0.0.43.jar (6.2 MB at 824 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/io/spring/javaform
+at/spring-javaformat-formatter-eclipse-jdt-jdk17/0.0.43/spring-javaformat-formatter-eclipse-jdt-jdk17-0.0.43.jar (6.3 MB at 668 kB/s)
+[INFO]
+[INFO] --- checkstyle:3.6.0:check (nohttp-checkstyle-validation) @ spring-petclinic ---
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/puppycrawl/tools/checkstyle/10.20.1/checkstyle-10.20.1.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/puppycrawl/tools/checkstyle/10.20.1/checkstyle-10.20.1.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/10.20.1/checkstyle-10.20.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/10.20.1/checkstyle-10.20.1.pom (237 kB at 1.1 MB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/info/picocli/picocli/4.7.6/picocli-4.7.6.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/info/picocli/picocli/4.7.6/picocli-4.7.6.pom
+Downloading from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/4.7.6/picocli-4.7.6.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/4.7.6/picocli-4.7.6.pom (1.4 kB at 23 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/antlr/antlr4-runtime/4.13.2/antlr4-runtime-4.13.2.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/antlr/antlr4-runtime/4.13.2/antlr4-runtime-4.13.2.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.13.2/antlr4-runtime-4.13.2.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.13.2/antlr4-runtime-4.13.2.pom (3.6 kB at 24 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/antlr/antlr4-master/4.13.2/antlr4-master-4.13.2.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/antlr/antlr4-master/4.13.2/antlr4-master-4.13.2.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-master/4.13.2/antlr4-master-4.13.2.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-master/4.13.2/antlr4-master-4.13.2.pom (4.8 kB at 96 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.pom (9.3 kB at 163 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/google/guava/guava-parent/33.3.1-jre/guava-parent-33.3.1-jre.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/google/guava/guava-parent/33.3.1-jre/guava-parent-33.3.1-jre.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/33.3.1-jre/guava-parent-33.3.1-jre.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/33.3.1-jre/guava-parent-33.3.1-jre.pom (20 kB at 200 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/net/sf/saxon/Saxon-HE/12.5/Saxon-HE-12.5.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/net/sf/saxon/Saxon-HE/12.5/Saxon-HE-12.5.pom
+Downloading from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/12.5/Saxon-HE-12.5.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/12.5/Saxon-HE-12.5.pom (4.2 kB at 79 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2.pom (2.6 kB at 44 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/httpcomponents/client5/httpclient5/5.1.3/httpclient5-5.1.3.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/httpcomponents/client5/httpclient5/5.1.3/httpclient5-5.1.3.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.1.3/httpclient5-5.1.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.1.3/httpclient5-5.1.3.pom (5.8 kB at 21 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/httpcomponents/client5/httpclient5-parent/5.1.3/httpclient5-parent-5.1.3.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/httpcomponents/client5/httpclient5-parent/5.1.3/httpclient5-parent-5.1.3.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5-parent/5.1.3/httpclient5-parent-5.1.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcom
+ponents/client5/httpclient5-parent/5.1.3/httpclient5-parent-5.1.3.pom (14 kB at 216 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/httpcomponents/httpcomponents-parent/12/httpcomponents-parent-12.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/httpcomponents/httpcomponents-parent/12/httpcomponents-parent-12.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-parent/12/httpcomponents-parent-12.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcom
+ponents/httpcomponents-parent/12/httpcomponents-parent-12.pom (32 kB at 404 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/httpcomponents/core5/httpcore5/5.1.3/httpcore5-5.1.3.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/httpcomponents/core5/httpcore5/5.1.3/httpcore5-5.1.3.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.1.3/httpcore5-5.1.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.1.3/httpcore5-5.1.3.pom (3.8 kB at 58 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/httpcomponents/core5/httpcore5-parent/5.1.3/httpcore5-parent-5.1.3.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/httpcomponents/core5/httpcore5-parent/5.1.3/httpcore5-parent-5.1.3.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-parent/5.1.3/httpcore5-parent-5.1.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcom
+ponents/core5/httpcore5-parent/5.1.3/httpcore5-parent-5.1.3.pom (10 kB at 143 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/httpcomponents/core5/httpcore5-h2/5.1.3/httpcore5-h2-5.1.3.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/httpcomponents/core5/httpcore5-h2/5.1.3/httpcore5-h2-5.1.3.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.1.3/httpcore5-h2-5.1.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.1.3/httpcore5-h2-5.1.3.pom (3.5 kB at 56 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/checkerframework/checker-qual/3.48.2/checker-qual-3.48.2.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/checkerframework/checker-qual/3.48.2/checker-qual-3.48.2.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.48.2/checker-qual-3.48.2.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.48.2/checker-qual-3.48.2.pom (2.1 kB at 27 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/doxia/doxia-module-xdoc/1.12.0/doxia-module-xdoc-1.12.0.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/doxia/doxia-module-xdoc/1.12.0/doxia-module-xdoc-1.12.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.12.0/doxia-module-xdoc-1.12.0.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.12.0/doxia-module-xdoc-1.12.0.pom (4.3 kB at 64 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/doxia/doxia-modules/1.12.0/doxia-modules-1.12.0.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/doxia/doxia-modules/1.12.0/doxia-modules-1.12.0.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.12.0/doxia-modules-1.12.0.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-modules/1.12.0/doxia-modules-1.12.0.pom (2.7 kB at 41 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/io/spring/nohttp/nohttp-checkstyle/0.0.11/nohttp-checkstyle-0.0.11.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/io/spring/nohttp/nohttp-checkstyle/0.0.11/nohttp-checkstyle-0.0.11.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/spring/nohttp/nohttp-checkstyle/0.0.11/nohttp-checkstyle-0.0.11.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/io/spring/nohttp/nohttp-checkstyle/0.0.11/nohttp-checkstyle-0.0.11.pom (2.5 kB at 34 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/puppycrawl/tools/checkstyle/8.33/checkstyle-8.33.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/puppycrawl/tools/checkstyle/8.33/checkstyle-8.33.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/8.33/checkstyle-8.33.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/8.33/checkstyle-8.33.pom (127 kB at 958 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/info/picocli/picocli/4.3.1/picocli-4.3.1.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/info/picocli/picocli/4.3.1/picocli-4.3.1.pom
+Downloading from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/4.3.1/picocli-4.3.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/4.3.1/picocli-4.3.1.pom (1.4 kB at 25 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/antlr/antlr/2.7.7/antlr-2.7.7.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/antlr/antlr/2.7.7/antlr-2.7.7.pom
+Downloading from central: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom (632 B at 11 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/antlr/antlr4-runtime/4.8-1/antlr4-runtime-4.8-1.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/antlr/antlr4-runtime/4.8-1/antlr4-runtime-4.8-1.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.8-1/antlr4-runtime-4.8-1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.8-1/antlr4-runtime-4.8-1.pom (3.6 kB at 59 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/antlr/antlr4-master/4.8-1/antlr4-master-4.8-1.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/antlr/antlr4-master/4.8-1/antlr4-master-4.8-1.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-master/4.8-1/antlr4-master-4.8-1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-master/4.8-1/antlr4-master-4.8-1.pom (4.4 kB at 88 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/checkerframework/checker-qual/2.11.1/checker-qual-2.11.1.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/checkerframework/checker-qual/2.11.1/checker-qual-2.11.1.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/2.11.1/checker-qual-2.11.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/2.11.1/checker-qual-2.11.1.pom (2.4 kB at 50 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorpr
+one/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.pom (2.1 kB at 30 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/google/errorprone/error_prone_parent/2.3.4/error_prone_parent-2.3.4.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/google/errorprone/error_prone_parent/2.3.4/error_prone_parent-2.3.4.pom
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.3.4/error_prone_parent-2.3.4.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.3.4/error_prone_parent-2.3.4.pom (5.4 kB at 76 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/net/sf/saxon/Saxon-HE/9.9.1-7/Saxon-HE-9.9.1-7.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/net/sf/saxon/Saxon-HE/9.9.1-7/Saxon-HE-9.9.1-7.pom
+Downloading from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.9.1-7/Saxon-HE-9.9.1-7.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/9.9.1-7/Saxon-HE-9.9.1-7.pom (4.1 kB at 70 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/io/spring/nohttp/nohttp/0.0.11/nohttp-0.0.11.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/io/spring/nohttp/nohttp/0.0.11/nohttp-0.0.11.pom
+Downloading from central: https://repo.maven.apache.org/maven2/io/spring/nohttp/nohttp/0.0.11/nohttp-0.0.11.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/io/spring/nohttp/nohttp/0.0.11/nohttp-0.0.11.pom (2.5 kB at 41 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.pom (3.8 kB at 52 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/slf4j/slf4j-parent/1.7.26/slf4j-parent-1.7.26.pom
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/slf4j/slf4j-parent/1.7.26/slf4j-parent-1.7.26.pom
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.26/slf4j-parent-1.7.26.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.26/slf4j-parent-1.7.26.pom (14 kB at 169 kB/s)
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/puppycrawl/tools/checkstyle/10.20.1/checkstyle-10.20.1.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/info/picocli/picocli/4.7.6/picocli-4.7.6.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/antlr/antlr4-runtime/4.13.2/antlr4-runtime-4.13.2.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/google/errorprone/error_prone_annotations/2.28.0/error_prone_annotations-2.28.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/net/sf/saxon/Saxon-HE/12.5/Saxon-HE-12.5.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/httpcomponents/client5/httpclient5/5.1.3/httpclient5-5.1.3.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/httpcomponents/core5/httpcore5-h2/5.1.3/httpcore5-h2-5.1.3.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/httpcomponents/core5/httpcore5/5.1.3/httpcore5-5.1.3.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2-data.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/checkerframework/checker-qual/3.48.2/checker-qual-3.48.2.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/doxia/doxia-module-xdoc/1.12.0/doxia-module-xdoc-1.12.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/io/spring/nohttp/nohttp-checkstyle/0.0.11/nohttp-checkstyle-0.0.11.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/io/spring/nohttp/nohttp/0.0.11/nohttp-0.0.11.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/reporting/maven-reporting-api/4.0.0/maven-reporting-api-4.0.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/reporting/maven-reporting-impl/4.0.0/maven-reporting-impl-4.0.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/shared/maven-shared-utils/3.4.2/maven-shared-utils-3.4.2.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/doxia/doxia-site-model/2.0.0/doxia-site-model-2.0.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/doxia/doxia-site-renderer/2.0.0/doxia-site-renderer-2.0.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/doxia/doxia-skin-model/2.0.0/doxia-skin-model-2.0.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/doxia/doxia-module-xhtml5/2.0.0/doxia-module-xhtml5-2.0.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/codehaus/plexus/plexus-velocity/2.2.0/plexus-velocity-2.2.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/velocity/velocity-engine-core/2.4/velocity-engine-core-2.4.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/velocity/tools/velocity-tools-generic/3.1/velocity-tools-generic-3.1.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/github/cliftonlabs/json-simple/3.0.2/json-simple-3.0.2.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/commons/commons-digester3/3.2/commons-digester3-3.2.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/doxia/doxia-module-apt/2.0.0/doxia-module-apt-2.0.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/codehaus/plexus/plexus-archiver/4.9.2/plexus-archiver-4.9.2.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/maven-archiver/3.6.2/maven-archiver-3.6.2.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/codehaus/plexus/plexus-io/3.4.2/plexus-io-3.4.2.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/commons/commons-compress/1.26.1/commons-compress-1.26.1.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/com/github/luben/zstd-jni/1.5.5-11/zstd-jni-1.5.5-11.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M3/org.eclipse.sisu.plexus-0.9.0.M3.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M3/org.eclipse.sisu.inject-0.9.0.M3.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/doxia/doxia-sink-api/2.0.0/doxia-sink-api-2.0.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/doxia/doxia-core/2.0.0/doxia-core-2.0.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/commons/commons-text/1.12.0/commons-text-1.12.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/maven/doxia/doxia-integration-tools/2.0.0/doxia-integration-tools-2.0.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/codehaus/plexus/plexus-interpolation/1.27/plexus-interpolation-1.27.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/codehaus/plexus/plexus-resources/1.3.0/plexus-resources-1.3.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/codehaus/plexus/plexus-component-annotations/2.2.0/plexus-component-annotations-2.2.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/codehaus/plexus/plexus-xml/3.0.1/plexus-xml-3.0.1.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar
+Downloading from spring-snapshots: https://repo.spring.io/snapshot/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/puppycrawl/tools/checkstyle/10.20.1/checkstyle-10.20.1.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/info/picocli/picocli/4.7.6/picocli-4.7.6.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/antlr/antlr4-runtime/4.13.2/antlr4-runtime-4.13.2.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/google/errorprone/error_prone_annotations/2.28.0/error_prone_annotations-2.28.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/net/sf/saxon/Saxon-HE/12.5/Saxon-HE-12.5.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/httpcomponents/client5/httpclient5/5.1.3/httpclient5-5.1.3.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/httpcomponents/core5/httpcore5-h2/5.1.3/httpcore5-h2-5.1.3.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/httpcomponents/core5/httpcore5/5.1.3/httpcore5-5.1.3.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/checkerframework/checker-qual/3.48.2/checker-qual-3.48.2.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2-data.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/doxia/doxia-module-xdoc/1.12.0/doxia-module-xdoc-1.12.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/io/spring/nohttp/nohttp-checkstyle/0.0.11/nohttp-checkstyle-0.0.11.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/io/spring/nohttp/nohttp/0.0.11/nohttp-0.0.11.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/reporting/maven-reporting-api/4.0.0/maven-reporting-api-4.0.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/reporting/maven-reporting-impl/4.0.0/maven-reporting-impl-4.0.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/shared/maven-shared-utils/3.4.2/maven-shared-utils-3.4.2.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/doxia/doxia-site-model/2.0.0/doxia-site-model-2.0.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/doxia/doxia-site-renderer/2.0.0/doxia-site-renderer-2.0.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/doxia/doxia-skin-model/2.0.0/doxia-skin-model-2.0.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/doxia/doxia-module-xhtml5/2.0.0/doxia-module-xhtml5-2.0.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/codehaus/plexus/plexus-velocity/2.2.0/plexus-velocity-2.2.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/velocity/velocity-engine-core/2.4/velocity-engine-core-2.4.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/velocity/tools/velocity-tools-generic/3.1/velocity-tools-generic-3.1.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/commons/commons-digester3/3.2/commons-digester3-3.2.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/github/cliftonlabs/json-simple/3.0.2/json-simple-3.0.2.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/doxia/doxia-module-apt/2.0.0/doxia-module-apt-2.0.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/maven-archiver/3.6.2/maven-archiver-3.6.2.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/codehaus/plexus/plexus-archiver/4.9.2/plexus-archiver-4.9.2.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/codehaus/plexus/plexus-io/3.4.2/plexus-io-3.4.2.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/commons/commons-compress/1.26.1/commons-compress-1.26.1.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/com/github/luben/zstd-jni/1.5.5-11/zstd-jni-1.5.5-11.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M3/org.eclipse.sisu.plexus-0.9.0.M3.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M3/org.eclipse.sisu.inject-0.9.0.M3.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/doxia/doxia-sink-api/2.0.0/doxia-sink-api-2.0.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/doxia/doxia-core/2.0.0/doxia-core-2.0.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/commons/commons-text/1.12.0/commons-text-1.12.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/maven/doxia/doxia-integration-tools/2.0.0/doxia-integration-tools-2.0.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/codehaus/plexus/plexus-interpolation/1.27/plexus-interpolation-1.27.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/codehau
+s/plexus/plexus-component-annotations/2.2.0/plexus-component-annotations-2.2.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/codehaus/plexus/plexus-xml/3.0.1/plexus-xml-3.0.1.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/codehaus/plexus/plexus-resources/1.3.0/plexus-resources-1.3.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar
+Downloading from spring-milestones: https://repo.spring.io/milestone/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/10.20.1/checkstyle-10.20.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/10.20.1/checkstyle-10.20.1.jar (2.2 MB at 1.3 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/4.7.6/picocli-4.7.6.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.13.2/antlr4-runtime-4.13.2.jar
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.jar
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.28.0/error_prone_annotations-2.28.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar (4.7 kB at 62 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/12.5/Saxon-HE-12.5.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorpr
+one/error_prone_annotations/2.28.0/error_prone_annotations-2.28.0.jar (19 kB at 220 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/info/picocli/picocli/4.7.6/picocli-4.7.6.jar (416 kB at 1.2 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.1.3/httpclient5-5.1.3.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.13.2/antlr4-runtime-4.13.2.jar (326 kB at 770 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.1.3/httpcore5-h2-5.1.3.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2.jar (166 kB at 340 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.1.3/httpcore5-5.1.3.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.1.3/httpcore5-h2-5.1.3.jar (232 kB at 322 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2-data.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.1.3/httpclient5-5.1.3.jar (798 kB at 852 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.48.2/checker-qual-3.48.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.48.2/checker-qual-3.48.2.jar (239 kB at 180 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.12.0/doxia-module-xdoc-1.12.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xdoc/1.12.0/doxia-module-xdoc-1.12.0.jar (37 kB at 26 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/spring/nohttp/nohttp-checkstyle/0.0.11/nohttp-checkstyle-0.0.11.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.jar (3.1 MB at 2.1 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/spring/nohttp/nohttp/0.0.11/nohttp-0.0.11.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/io/spring/nohttp/nohttp-checkstyle/0.0.11/nohttp-checkstyle-0.0.11.jar (4.9 kB at 3.3 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/4.0.0/maven-reporting-api-4.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/io/spring/nohttp/nohttp/0.0.11/nohttp-0.0.11.jar (25 kB at 16 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-impl/4.0.0/maven-reporting-impl-4.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/r
+eporting/maven-reporting-api/4.0.0/maven-reporting-api-4.0.0.jar (9.8 kB at 6.4 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.4.2/maven-shared-utils-3.4.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/r
+eporting/maven-reporting-impl/4.0.0/maven-reporting-impl-4.0.0.jar (21 kB at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-model/2.0.0/doxia-site-model-2.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.4.2/maven-shared-utils-3.4.2.jar (151 kB at 92 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/2.0.0/doxia-site-renderer-2.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-renderer/2.0.0/doxia-site-renderer-2.0.0.jar (44 kB at 26 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-skin-model/2.0.0/doxia-skin-model-2.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-site-model/2.0.0/doxia-site-model-2.0.0.jar (86 kB at 49 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml5/2.0.0/doxia-module-xhtml5-2.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-skin-model/2.0.0/doxia-skin-model-2.0.0.jar (16 kB at 9.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/2.2.0/plexus-velocity-2.2.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-xhtml5/2.0.0/doxia-module-xhtml5-2.0.0.jar (17 kB at 9.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity-engine-core/2.4/velocity-engine-core-2.4.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-velocity/2.2.0/plexus-velocity-2.2.0.jar (5.7 kB at 3.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/velocity/tools/velocity-tools-generic/3.1/velocity-tools-generic-3.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/12.5/Saxon-HE-12.5.jar (5.6 MB at 2.9 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-digester3/3.2/commons-digester3-3.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/xmlresolver/xmlresolver/5.2.2/xmlresolver-5.2.2-data.jar (1.0 MB at 521 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/github/cliftonlabs/json-simple/3.0.2/json-simple-3.0.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocit
+y/tools/velocity-tools-generic/3.1/velocity-tools-generic-3.1.jar (217 kB at 110 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/2.0.0/doxia-module-apt-2.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.1.3/httpcore5-5.1.3.jar (851 kB at 421 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.2/maven-archiver-3.6.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/com/github/cliftonlabs/json-simple/3.0.2/json-simple-3.0.2.jar (35 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.9.2/plexus-archiver-4.9.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-digester3/3.2/commons-digester3-3.2.jar (242 kB at 116 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.2/plexus-io-3.4.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.2/maven-archiver-3.6.2.jar (27 kB at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.26.1/commons-compress-1.26.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-apt/2.0.0/doxia-module-apt-2.0.0.jar (54 kB at 25 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.2/plexus-io-3.4.2.jar (79 kB at 36 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/velocity/velocity-engine-core/2.4/velocity-engine-core-2.4.jar (510 kB at 231 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.5-11/zstd-jni-1.5.5-11.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar (58 kB at 26 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M3/org.eclipse.sisu.plexus-0.9.0.M3.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.9.2/plexus-archiver-4.9.2.jar (225 kB at 99 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M3/org.eclipse.sisu.inject-0.9.0.M3.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/o
+rg.eclipse.sisu.plexus/0.9.0.M3/org.eclipse.sisu.plexus-0.9.0.M3.jar (216 kB at 92 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/2.0.0/doxia-sink-api-2.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/2.0.0/doxia-sink-api-2.0.0.jar (11 kB at 4.7 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/2.0.0/doxia-core-2.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-core/2.0.0/doxia-core-2.0.0.jar (168 kB at 66 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.12.0/commons-text-1.12.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.26.1/commons-compress-1.26.1.jar (1.1 MB at 419 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-integration-tools/2.0.0/doxia-integration-tools-2.0.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-text/1.12.0/commons-text-1.12.0.jar (251 kB at 94 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.27/plexus-interpolation-1.27.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/d
+oxia/doxia-integration-tools/2.0.0/doxia-integration-tools-2.0.0.jar (50 kB at 19 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.2.0/plexus-component-annotations-2.2.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar (365 kB at 136 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.3.0/plexus-resources-1.3.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.27/plexus-interpolation-1.27.jar (86 kB at 31 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-xml/3.0.1/plexus-xml-3.0.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexu
+s/plexus-component-annotations/2.2.0/plexus-component-annotations-2.2.0.jar (4.2 kB at 1.5 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/o
+rg.eclipse.sisu.inject/0.9.0.M3/org.eclipse.sisu.inject-0.9.0.M3.jar (434 kB at 156 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-resources/1.3.0/plexus-resources-1.3.0.jar (23 kB at 8.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.jar (12 kB at 4.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-xml/3.0.1/plexus-xml-3.0.1.jar (94 kB at 33 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar (57 kB at 19 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar (128 kB at 43 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar (674 kB at 199 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.5-11/zstd-jni-1.5.5-11.jar (6.8 MB at 1.3 MB/s)
+[INFO] You have 0 Checkstyle violations.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  40.671 s
+[INFO] Finished at: 2025-03-26T10:23:27+01:00
+[INFO] ------------------------------------------------------------------------
