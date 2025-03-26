@@ -1,44 +1,112 @@
-import jetbrains.buildServer.configs.kotlin.v2023_2.* // Ensure correct version import
-import jetbrains.buildServer.configs.kotlin.v2023_2.BuildType
-import jetbrains.buildServer.configs.kotlin.v2023_2.Project
-import jetbrains.buildServer.configs.kotlin.v2023_2.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
+import jetbrains.buildServer.configs.kotlin.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.failureConditions.BuildFailureOnMetric
+import jetbrains.buildServer.configs.kotlin.failureConditions.failOnMetricChange
+import jetbrains.buildServer.configs.kotlin.requirements.exists
+import jetbrains.buildServer.configs.kotlin.requirements.minRequiredVersion
+import jetbrains.buildServer.configs.kotlin.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
-version = "2023.2"
+/*
+The settings script is an entry point for defining a TeamCity
+project hierarchy. The script should contain a single call to the
+project() function with a Project instance or an init function as
+an argument.
+
+VcsRoots, BuildTypes, Templates, and subprojects can be
+registered inside the project using the vcsRoot(), buildType(),
+template(), and subProject() methods respectively.
+
+To debug settings scripts in command-line, run the
+
+    mvnDebug org.jetbrains.teamcity:teamcity-configs-maven-plugin:generate
+
+command and attach your debugger to the port 8000.
+
+To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
+-> Tool Windows -> Maven Projects), find the generate task node
+(Plugins -> teamcity-configs -> teamcity-configs:generate), the
+'Debug' option is available in the context menu for the task.
+*/
+
+version = "2024.12"
 
 project {
-    description = "TeamCity Project for Spring PetClinic: Build & Test"
 
-    vcsRoot(DslContext.settingsRoot)
+    vcsRoot(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
 
-    buildType(BuildMavenApp) // Add a build configuration to the project
+    buildType(Build)
 }
 
-// Define the Maven build type
-object BuildMavenApp : BuildType({
-    name = "Build and Test Maven App"
+object Build : BuildType({
+    name = "Build"
+
+    params {
+        param("env.JAVA_HOME", "%env.JDK_17%")
+        param("java.required.version", "17")
+    }
 
     vcs {
-        root(DslContext.settingsRoot)
+        root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
+    }
+
+    requirements {
+        exists("env.JAVA_HOME")
+        minRequiredVersion("java.required.version", "17")
     }
 
     steps {
         maven {
-            name = "Maven Build and Test"
+            name = "Generate CSS Resources"
+            goals = "generate-resources"
+            runnerArgs = "-P css"
+            jdkHome = "%env.JAVA_HOME%"
+        }
+
+        maven {
+            name = "Run Tests"
+            goals = "test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            jdkHome = "%env.JAVA_HOME%"
+        }
+
+        maven {
+            name = "Clean and Package"
             goals = "clean package"
-            runnerArgs = "-DskipTests=false"
-            jdkHome = "%env.JDK_21%" // Environmental variable for JDK 21 installation path
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            jdkHome = "%env.JAVA_HOME%"
         }
     }
 
     triggers {
         vcs {
-            branchFilter = "+:<default>" // Only trigger builds for the default branch
         }
     }
 
-    artifactRules = "target/*.jar => build-output"
-
-    requirements {
-        exists("env.JDK_21") // Verify that JDK 21 is installed on the agent
+    features {
+        perfmon {
+        }
     }
+
+    failureConditions {
+        failOnMetricChange {
+            metric = BuildFailureOnMetric.MetricType.TEST_FAILED_COUNT
+            threshold = 0
+            units = BuildFailureOnMetric.MetricUnit.DEFAULT_UNIT
+            comparison = BuildFailureOnMetric.MetricComparison.MORE
+            compareTo = build {
+                buildRule = lastSuccessful()
+            }
+        }
+    }
+
+    artifactRules = "target/*.jar"
+})
+
+object HttpsGithubComKilina0springPetclinicGitRefsHeadsMain : GitVcsRoot({
+    name = "https://github.com/kilina0/spring-petclinic.git#refs/heads/main"
+    url = "https://github.com/kilina0/spring-petclinic.git"
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
 })
