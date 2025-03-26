@@ -1,7 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
-import jetbrains.buildServer.configs.kotlin.buildSteps.maven
-import jetbrains.buildServer.configs.kotlin.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -14,7 +12,10 @@ registered inside the project using the vcsRoot(), buildType(),
 template(), and subProject() methods respectively.
 
 To debug settings scripts in command-line, run the
-'inspect' command in 'TeamCity' tool window.
+
+    mvnDebug org.jetbrains.teamcity:teamcity-configs-maven-plugin:generate
+
+command and attach your debugger to the port 8000.
 
 To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 -> Tool Windows -> Maven Projects), find the generate task node
@@ -22,50 +23,26 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2023.11"
+version = "2024.12"
 
 project {
-    description = "Spring PetClinic Sample Application"
 
-    buildType {
-        id("SpringPetclinicBuild")
-        name = "Build and Test"
+    vcsRoot(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
 
-        vcs {
-            root(DslContext.settingsRoot)
-        }
-
-        steps {
-            maven {
-                name = "Clean, Build and Test"
-                goals = "clean package"
-                runnerArgs = "-Dmaven.test.failure.ignore=true"
-                mavenVersion = defaultProvidedVersion()
-                jdkHome = "%env.JDK_17%"
-            }
-        }
-
-        triggers {
-            vcs {
-                branchFilter = "+:*"
-            }
-        }
-
-        features {
-            perfmon {
-            }
-        }
-
-        requirements {
-            exists("env.JDK_17")
-        }
-
-        failureConditions {
-            executionTimeoutMin = 15
-        }
-
-        params {
-            param("teamcity.ui.settings.readOnly", "true")
-        }
-    }
+    buildType(Build)
 }
+
+object Build : BuildType({
+    name = "Build"
+
+    vcs {
+        root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
+    }
+})
+
+object HttpsGithubComKilina0springPetclinicGitRefsHeadsMain : GitVcsRoot({
+    name = "https://github.com/kilina0/spring-petclinic.git#refs/heads/main"
+    url = "https://github.com/kilina0/spring-petclinic.git"
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
+})
