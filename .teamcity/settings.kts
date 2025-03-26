@@ -63,7 +63,6 @@ object Build : BuildType({
             name = "Clean & Package"
             goals = "clean package"
             runnerArgs = "-Dmaven.test.failure.ignore=true -Dmaven.test.skip=true"
-            jdkHome = "%env.JDK_17%"
         }
     }
 
@@ -76,10 +75,6 @@ object Build : BuildType({
     features {
         perfmon {
         }
-    }
-
-    requirements {
-        exists("env.JDK_17")
     }
 })
 
@@ -101,7 +96,6 @@ object Test : BuildType({
             name = "Run Tests with JaCoCo"
             goals = "clean test jacoco:report"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-            jdkHome = "%env.JDK_17%"
         }
     }
 
@@ -138,10 +132,6 @@ object Test : BuildType({
             }
         }
     }
-
-    requirements {
-        exists("env.JDK_17")
-    }
 })
 
 object CodeQuality : BuildType({
@@ -161,7 +151,6 @@ object CodeQuality : BuildType({
             name = "Run Checkstyle"
             goals = "checkstyle:checkstyle"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-            jdkHome = "%env.JDK_17%"
         }
     }
 
@@ -181,10 +170,6 @@ object CodeQuality : BuildType({
     features {
         perfmon {
         }
-    }
-
-    requirements {
-        exists("env.JDK_17")
     }
 })
 
@@ -227,10 +212,6 @@ object Deploy : BuildType({
             buildRule = lastSuccessful()
             artifactRules = "build/*.jar => target/"
         }
-    }
-
-    requirements {
-        exists("env.JDK_17")
     }
 })
 
