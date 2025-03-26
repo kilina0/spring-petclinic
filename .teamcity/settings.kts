@@ -1,57 +1,48 @@
-import jetbrains.buildServer.configs.kotlin.v2023_2.*
+import jetbrains.buildServer.configs.kotlin.v2023_2.* // Update this if you're using a different version
 import jetbrains.buildServer.configs.kotlin.v2023_2.buildSteps.maven
-import jetbrains.buildServer.configs.kotlin.v2023_2.ui.*
 
-version = "2023.2"
+version = "2023.2" // Ensure the version matches your TeamCity installation
 
-// Project definition
 project {
-    description = "TeamCity Project for Maven Build and Testing with Spring Petclinic"
+    description = "TeamCity Project for Spring PetClinic Maven Build and Test"
 
-    // Define the build configuration
+    // Add the VCS Root (ensure the repository URL is correctly set in TeamCity UI)
+    vcsRoot(DslContext.settingsRoot)
+
     buildType(BuildMavenApp)
 }
 
-// Build configuration for Maven
+// Build configuration for Maven build and testing
 object BuildMavenApp : BuildType({
     name = "Build and Test Maven App"
 
     vcs {
-        root(DslContext.settingsRoot) // Automatically uses the VCS Root of your repository
+        root(DslContext.settingsRoot) // Links VCS Root
     }
 
     steps {
-        // Step 1: Run Maven Build
+        // Step 1: Maven Clean and Package
         maven {
+            name = "Maven Build and Test"
             goals = "clean package"
-            runnerArgs = "-DskipTests=false" // Ensures tests are executed
-            pomLocation = "pom.xml"
-            jdkHome = "%env.JDK_21%" // Use Java 21 (replace with appropriate JDK environment variable)
-        }
-
-        // Optional: Step to build the Docker image with Spring Boot plugins
-        maven {
-            goals = "spring-boot:build-image"
-            runnerArgs = "-DskipTests=true"
-            pomLocation = "pom.xml"
-            jdkHome = "%env.JDK_21%" // Replace with correct JDK environment variable if needed
-            enabled = false // Disable by default
+            runnerArgs = "-DskipTests=false" // Ensure tests are run
+            jdkHome = "%env.JDK_21%" // Ensure this JDK environment parameter is set in TeamCity
         }
     }
 
-    // Define triggers
     triggers {
+        // VCS trigger: automatic builds on commits to the default branch
         vcs {
-            branchFilter = "+:<default>" // Only trigger for the default branch
+            branchFilter = "+:<default>" // Ensures tracking the VCS default branch
         }
     }
 
-    // Define artifacts (e.g., jar from Maven's `target` directory)
-    artifactRules = "target/*.jar => build-output"
+    artifactRules = """
+        target/*.jar => build-output
+    """
 
-    // Requirements for agent
     requirements {
-        contains("teamcity.agent.jvm.os.name", "Windows") // Ensures it runs on Windows agents
-        equals("teamcity.agent.work.dir", "%teamcity.build.workingDirs.root%") // Ensure predefined working directory
+        // Ensures the build runs on an agent with the correct JDK version
+        exists("env.JDK_21")
     }
 })
