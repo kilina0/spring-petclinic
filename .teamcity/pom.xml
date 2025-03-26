@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <project>
   <modelVersion>4.0.0</modelVersion>
-  <name>SpringPetclinic Config DSL Script</name>
-  <groupId>SpringPetclinic</groupId>
-  <artifactId>SpringPetclinic_dsl</artifactId>
+  <name>Spring Petclinic DSL</name>
+  <groupId>Tmp</groupId>
+  <artifactId>Tmp_dsl</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <parent>
     <groupId>org.jetbrains.teamcity</groupId>
     <artifactId>configs-dsl-kotlin-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <relativePath/>
   </parent>
 
   <repositories>
@@ -22,7 +23,7 @@
     </repository>
     <repository>
       <id>teamcity-server</id>
-      <url>https://kilina2.staging.sandbox.teamcity.aws.intellij.net/app/dsl-plugins-repository</url>
+      <url>https://cloud.teamcity.com/app/dsl-plugins-repository</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
