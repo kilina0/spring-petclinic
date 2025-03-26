@@ -40,15 +40,9 @@ project {
 object Build : BuildType({
     name = "Build"
 
-    params {
-        param("env.JAVA_HOME", "%env.JDK_17%")
-        param("java.required.version", "17")
-    }
-
     vcs {
         root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
     }
-
 
     steps {
         maven {
@@ -82,7 +76,6 @@ object Build : BuildType({
         perfmon {
         }
     }
-
 
     artifactRules = "target/*.jar"
 })
