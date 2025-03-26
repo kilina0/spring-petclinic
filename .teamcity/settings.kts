@@ -39,7 +39,6 @@ object Build : BuildType({
     name = "Build"
 
     params {
-        param("env.JAVA_HOME", "%env.JDK_17%")
         param("java.required.version", "17")
     }
 
@@ -53,21 +52,18 @@ object Build : BuildType({
             name = "Generate CSS Resources"
             goals = "generate-resources"
             runnerArgs = "-P css"
-            jdkHome = "%env.JAVA_HOME%"
         }
 
         maven {
             name = "Run Tests"
             goals = "test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-            jdkHome = "%env.JAVA_HOME%"
         }
 
         maven {
             name = "Clean and Package"
             goals = "clean package"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-            jdkHome = "%env.JAVA_HOME%"
         }
     }
 
