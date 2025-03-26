@@ -29,8 +29,9 @@ version = "2023.11"
 project {
     // Project details
     uuid = "SpringPetClinic"
-    id("SpringPetClinic")
-    name = "Spring PetClinic"
+    // id and name are automatically derived by TeamCity in relative project hierarchy
+    // id("SpringPetClinic") - removed to fix TeamCity error
+    // name = "Spring PetClinic" - removed to fix TeamCity error
     description = "Spring PetClinic Sample Application"
 
     // VCS Root configuration

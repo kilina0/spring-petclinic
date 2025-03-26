@@ -29,8 +29,9 @@ version = "2023.11"
 project {
     // Project details
     uuid = "SpringPetClinic"
-    id("SpringPetClinic")
-    name = "Spring PetClinic"
+    // id and name are automatically derived by TeamCity in relative project hierarchy
+    // id("SpringPetClinic") - removed to fix TeamCity error
+    // name = "Spring PetClinic" - removed to fix TeamCity error
     description = "Spring PetClinic Sample Application"
 
     // VCS Root configuration
@@ -110,11 +111,11 @@ project {
     buildType {
         id("SpringPetClinicMySQLTests")
         name = "MySQL Integration Tests"
-        
+
         vcs {
             root(vcsRoot)
         }
-        
+
         steps {
             maven {
                 name = "Run MySQL Integration Tests"
@@ -124,7 +125,7 @@ project {
                 jdkHome = "%env.JDK_17_HOME%"
             }
         }
-        
+
         // This build will run after the main build completes successfully
         triggers {
             finishBuildTrigger {
@@ -132,7 +133,7 @@ project {
                 successfulOnly = true
             }
         }
-        
+
         artifactRules = "target/failsafe-reports => integration-test-reports"
     }
 
@@ -140,11 +141,11 @@ project {
     buildType {
         id("SpringPetClinicDockerBuild")
         name = "Build Docker Image"
-        
+
         vcs {
             root(vcsRoot)
         }
-        
+
         steps {
             maven {
                 name = "Build Docker Image"
@@ -154,7 +155,7 @@ project {
                 jdkHome = "%env.JDK_17_HOME%"
             }
         }
-        
+
         // This build will run after the main build completes successfully
         triggers {
             finishBuildTrigger {
