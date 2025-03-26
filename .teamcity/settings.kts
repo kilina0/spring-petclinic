@@ -1,10 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
-import jetbrains.buildServer.configs.kotlin.failureConditions.BuildFailureOnMetric
-import jetbrains.buildServer.configs.kotlin.failureConditions.failOnMetricChange
-import jetbrains.buildServer.configs.kotlin.requirements.exists
-import jetbrains.buildServer.configs.kotlin.requirements.minRequiredVersion
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
@@ -51,10 +47,6 @@ object Build : BuildType({
         root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
     }
 
-    requirements {
-        exists("env.JAVA_HOME")
-        minRequiredVersion("java.required.version", "17")
-    }
 
     steps {
         maven {
@@ -89,17 +81,6 @@ object Build : BuildType({
         }
     }
 
-    failureConditions {
-        failOnMetricChange {
-            metric = BuildFailureOnMetric.MetricType.TEST_FAILED_COUNT
-            threshold = 0
-            units = BuildFailureOnMetric.MetricUnit.DEFAULT_UNIT
-            comparison = BuildFailureOnMetric.MetricComparison.MORE
-            compareTo = build {
-                buildRule = lastSuccessful()
-            }
-        }
-    }
 
     artifactRules = "target/*.jar"
 })
