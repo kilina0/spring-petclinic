@@ -69,7 +69,7 @@ object Build : BuildType({
         }
         notifications {
             notifierSettings = slackNotifier {
-                connection = "tc-gathering-group1"
+                connection = "PROJECT_EXT_3"
             }
             branchFilter = "+:*"
             buildFailed = true
