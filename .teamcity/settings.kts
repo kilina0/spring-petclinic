@@ -1,11 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
-import jetbrains.buildServer.configs.kotlin.buildSteps.maven
-import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
-import jetbrains.buildServer.configs.kotlin.buildFeatures.commitStatusPublisher
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.buildFeatures.notifications
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -32,6 +26,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2024.12"
 
 project {
+
     vcsRoot(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
 
     buildType(Build)
@@ -39,43 +34,9 @@ project {
 
 object Build : BuildType({
     name = "Build"
-    description = "Build and test Spring Petclinic application"
-
-    artifactRules = """
-        target/*.jar => artifacts.zip
-        target/*.war => artifacts.zip
-    """.trimIndent()
 
     vcs {
         root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
-    }
-
-    steps {
-        maven {
-            name = "Compile and Test"
-            goals = "clean package"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-    }
-
-    triggers {
-        vcs {
-            branchFilter = "+:*"
-        }
-    }
-
-    features {
-        perfmon {
-        }
-        notifications {
-            notifierSettings = slackNotifier {
-                connection = "PROJECT_EXT_3"
-                param("channel", "tc-gathering-group1")
-            }
-            branchFilter = "+:*"
-            buildFailed = true
-            buildFailedToStart = true
-        }
     }
 })
 
