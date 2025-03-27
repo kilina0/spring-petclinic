@@ -3,6 +3,8 @@ import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
+import jetbrains.buildServer.configs.kotlin.buildFeatures.commitStatusPublisher
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -29,55 +31,18 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2024.12"
 
 project {
-    description = "Spring PetClinic Sample Application"
-
     vcsRoot(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
 
     buildType(Build)
-    buildType(Test)
-    buildType(BuildWithCSS)
-    
-    // Define build chain
-    buildType(BuildChain)
 }
 
 object Build : BuildType({
     name = "Build"
-    description = "Builds the Spring PetClinic application"
-
-    artifactRules = "target/*.jar"
-
-    vcs {
-        root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
-    }
-
-    steps {
-        maven {
-            name = "Maven Build"
-            goals = "clean package"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-    }
-
-    triggers {
-        vcs {
-            branchFilter = "+:*"
-        }
-    }
-
-    features {
-        perfmon {
-        }
-    }
-})
-
-object Test : BuildType({
-    name = "Test"
-    description = "Runs tests for the Spring PetClinic application"
+    description = "Build and test Spring Petclinic application"
 
     artifactRules = """
-        target/surefire-reports => reports.zip
-        target/site/jacoco => jacoco-report.zip
+        target/*.jar => artifacts.zip
+        target/*.war => artifacts.zip
     """.trimIndent()
 
     vcs {
@@ -86,45 +51,10 @@ object Test : BuildType({
 
     steps {
         maven {
-            name = "Run Tests"
-            goals = "clean test"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-    }
-
-    triggers {
-        vcs {
-            branchFilter = "+:*"
-        }
-    }
-
-    features {
-        perfmon {
-        }
-    }
-    
-    dependencies {
-        snapshot(Build) {
-            reuseBuilds = ReuseBuilds.SUCCESSFUL
-        }
-    }
-})
-
-object BuildWithCSS : BuildType({
-    name = "Build with CSS"
-    description = "Builds the Spring PetClinic application with CSS compilation"
-
-    artifactRules = "target/*.jar"
-
-    vcs {
-        root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
-    }
-
-    steps {
-        maven {
-            name = "Maven Build with CSS"
+            name = "Compile and Test"
             goals = "clean package"
-            runnerArgs = "-P css -Dmaven.test.failure.ignore=true"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            jdkHome = "%env.JDK_17%"
         }
     }
 
@@ -136,35 +66,6 @@ object BuildWithCSS : BuildType({
 
     features {
         perfmon {
-        }
-    }
-    
-    dependencies {
-        snapshot(Test) {
-            reuseBuilds = ReuseBuilds.SUCCESSFUL
-        }
-    }
-})
-
-object BuildChain : BuildType({
-    name = "Build Chain"
-    description = "Runs the complete build chain: Build -> Test -> Build with CSS"
-    
-    type = BuildTypeSettings.Type.COMPOSITE
-    
-    vcs {
-        root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
-    }
-    
-    dependencies {
-        snapshot(Build) {
-            reuseBuilds = ReuseBuilds.SUCCESSFUL
-        }
-        snapshot(Test) {
-            reuseBuilds = ReuseBuilds.SUCCESSFUL
-        }
-        snapshot(BuildWithCSS) {
-            reuseBuilds = ReuseBuilds.SUCCESSFUL
         }
     }
 })
