@@ -1,4 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
+import jetbrains.buildServer.configs.kotlin.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
@@ -26,17 +29,47 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2024.12"
 
 project {
+    description = "Spring PetClinic Sample Application"
 
     vcsRoot(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
 
-    buildType(Build)
+    buildType(MavenBuild)
 }
 
-object Build : BuildType({
-    name = "Build"
+object MavenBuild : BuildType({
+    name = "Maven Build"
+    description = "Builds the Spring PetClinic application using Maven"
+
+    artifactRules = """
+        target/*.jar => spring-petclinic.zip
+        target/site/jacoco/** => jacoco-report.zip
+    """.trimIndent()
 
     vcs {
         root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
+    }
+
+    steps {
+        maven {
+            name = "Compile CSS"
+            goals = "generate-resources"
+            runnerArgs = "-P css"
+        }
+        maven {
+            name = "Build and Test"
+            goals = "clean package"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
+    }
+
+    triggers {
+        vcs {
+            branchFilter = "+:*"
+        }
+    }
+
+    features {
+        perfmon {}
     }
 })
 
