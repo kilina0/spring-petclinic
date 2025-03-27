@@ -74,6 +74,7 @@ object Build : BuildType({
             branchFilter = "+:*"
             buildFailed = true
             buildFailedToStart = true
+            param("channel", "tc-gathering-group1")
         }
     }
 })
