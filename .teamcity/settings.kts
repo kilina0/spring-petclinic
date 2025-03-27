@@ -54,7 +54,6 @@ object Build : BuildType({
             name = "Compile and Test"
             goals = "clean package"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-            jdkHome = "%env.JDK_17%"
         }
     }
 
