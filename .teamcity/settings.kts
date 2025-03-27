@@ -1,10 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.failureConditions.BuildFailureOnMetric
-import jetbrains.buildServer.configs.kotlin.failureConditions.failOnMetricChange
-import jetbrains.buildServer.configs.kotlin.triggers.finishBuildTrigger
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
@@ -33,26 +29,23 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2024.12"
 
 project {
-    description = "Spring PetClinic Application"
+    description = "Spring PetClinic Sample Application"
 
     vcsRoot(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
 
     buildType(Build)
     buildType(Test)
-    buildType(CodeQuality)
-    buildType(Deploy)
-
-    buildTypesOrder = arrayListOf(Build, Test, CodeQuality, Deploy)
+    buildType(BuildWithCSS)
+    
+    // Define build chain
+    buildType(BuildChain)
 }
 
 object Build : BuildType({
     name = "Build"
-    description = "Build Spring PetClinic Application"
+    description = "Builds the Spring PetClinic application"
 
-    artifactRules = """
-        target/*.jar => build
-        target/classes => classes
-    """.trimIndent()
+    artifactRules = "target/*.jar"
 
     vcs {
         root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
@@ -60,9 +53,9 @@ object Build : BuildType({
 
     steps {
         maven {
-            name = "Clean & Package"
+            name = "Maven Build"
             goals = "clean package"
-            runnerArgs = "-Dmaven.test.failure.ignore=true -Dmaven.test.skip=true"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
     }
 
@@ -80,7 +73,7 @@ object Build : BuildType({
 
 object Test : BuildType({
     name = "Test"
-    description = "Run tests for Spring PetClinic Application"
+    description = "Runs tests for the Spring PetClinic application"
 
     artifactRules = """
         target/surefire-reports => reports.zip
@@ -93,8 +86,8 @@ object Test : BuildType({
 
     steps {
         maven {
-            name = "Run Tests with JaCoCo"
-            goals = "clean test jacoco:report"
+            name = "Run Tests"
+            goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
     }
@@ -102,17 +95,6 @@ object Test : BuildType({
     triggers {
         vcs {
             branchFilter = "+:*"
-            enabled = false
-        }
-        finishBuildTrigger {
-            buildType = "${Build.id}"
-            successfulOnly = true
-        }
-    }
-
-    dependencies {
-        snapshot(Build) {
-            onDependencyFailure = FailureAction.FAIL_TO_START
         }
     }
 
@@ -120,27 +102,19 @@ object Test : BuildType({
         perfmon {
         }
     }
-
-    failureConditions {
-        failOnMetricChange {
-            metric = BuildFailureOnMetric.MetricType.TEST_COUNT
-            threshold = 10
-            units = BuildFailureOnMetric.MetricUnit.PERCENTS
-            comparison = BuildFailureOnMetric.MetricComparison.LESS
-            compareTo = build {
-                buildRule = lastSuccessful()
-            }
+    
+    dependencies {
+        snapshot(Build) {
+            reuseBuilds = ReuseBuilds.SUCCESSFUL
         }
     }
 })
 
-object CodeQuality : BuildType({
-    name = "Code Quality"
-    description = "Run code quality checks"
+object BuildWithCSS : BuildType({
+    name = "Build with CSS"
+    description = "Builds the Spring PetClinic application with CSS compilation"
 
-    artifactRules = """
-        target/checkstyle-result.xml => checkstyle.zip
-    """.trimIndent()
+    artifactRules = "target/*.jar"
 
     vcs {
         root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
@@ -148,22 +122,15 @@ object CodeQuality : BuildType({
 
     steps {
         maven {
-            name = "Run Checkstyle"
-            goals = "checkstyle:checkstyle"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            name = "Maven Build with CSS"
+            goals = "clean package"
+            runnerArgs = "-P css -Dmaven.test.failure.ignore=true"
         }
     }
 
     triggers {
-        finishBuildTrigger {
-            buildType = "${Test.id}"
-            successfulOnly = true
-        }
-    }
-
-    dependencies {
-        snapshot(Test) {
-            onDependencyFailure = FailureAction.FAIL_TO_START
+        vcs {
+            branchFilter = "+:*"
         }
     }
 
@@ -171,46 +138,33 @@ object CodeQuality : BuildType({
         perfmon {
         }
     }
+    
+    dependencies {
+        snapshot(Test) {
+            reuseBuilds = ReuseBuilds.SUCCESSFUL
+        }
+    }
 })
 
-object Deploy : BuildType({
-    name = "Deploy"
-    description = "Deploy Spring PetClinic Application"
-
-    type = BuildTypeSettings.Type.DEPLOYMENT
-    enablePersonalBuilds = false
-    maxRunningBuilds = 1
-
+object BuildChain : BuildType({
+    name = "Build Chain"
+    description = "Runs the complete build chain: Build -> Test -> Build with CSS"
+    
+    type = BuildTypeSettings.Type.COMPOSITE
+    
     vcs {
         root(HttpsGithubComKilina0springPetclinicGitRefsHeadsMain)
     }
-
-    steps {
-        script {
-            name = "Prepare Deployment"
-            scriptContent = """
-                echo "Preparing deployment environment..."
-                mkdir -p deploy
-            """.trimIndent()
-        }
-
-        script {
-            name = "Deploy Application"
-            scriptContent = """
-                echo "Deploying Spring PetClinic application..."
-                cp %teamcity.build.checkoutDir%/target/*.jar deploy/
-                echo "Application deployed successfully!"
-            """.trimIndent()
-        }
-    }
-
+    
     dependencies {
-        snapshot(CodeQuality) {
-            onDependencyFailure = FailureAction.FAIL_TO_START
+        snapshot(Build) {
+            reuseBuilds = ReuseBuilds.SUCCESSFUL
         }
-        artifacts(Build) {
-            buildRule = lastSuccessful()
-            artifactRules = "build/*.jar => target/"
+        snapshot(Test) {
+            reuseBuilds = ReuseBuilds.SUCCESSFUL
+        }
+        snapshot(BuildWithCSS) {
+            reuseBuilds = ReuseBuilds.SUCCESSFUL
         }
     }
 })
