@@ -5,6 +5,7 @@ import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 import jetbrains.buildServer.configs.kotlin.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.buildFeatures.notifications
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -66,6 +67,14 @@ object Build : BuildType({
 
     features {
         perfmon {
+        }
+        notifications {
+            notifierSettings = slackNotifier {
+                connection = "tc-gathering-group1"
+            }
+            branchFilter = "+:*"
+            buildFailed = true
+            buildFailedToStart = true
         }
     }
 })
